@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+/* navbar css */
+#my-nav{
+    width:100%;
+    background-color: rgba(0,0,0,0.5) !important;
+    color:#404040;
+    z-index:1;
+    position: fixed;
+    top:0;
+    left: 0;
+    
+}
+/* modal css */
+.my-modal{
+    text-align: center;
+    
+}
+
+/* homepage css */
+
+.my-video{
+    width:100% !important;
+    height:100vh !important;
+    position: absolute;
+    top:0;
+    left:0;
+padding:0;
+    
+}
+
+.b-btn{
+    z-index:1;
+    position: absolute;
+    bottom:120px;
+    left:50%;
+    transform: translateX(-50%);
+    border:none;
+    border-radius:50px;
+    padding:10px;
+    background-color:rgb(165, 20, 64);
+    color:white;
+    font-size:1.5rem;
+}
+/* custom classes for all */
+.s-btn{
+    background-color: rgb(165, 20, 64) !important;
+    color:white;
+    font-size:1.2rem;
+    border-radius:50px;
+    width:100px;
+    border:none;
+    outline: none;
+    padding:5px;
+    margin: 20px;
+    
+}
+
+.brand-logo{
+    font-family:'Great Vibes',cursive;
+    font-size:2.5rem !important;
+}
+.fc-black{
+    color:#404040 !important;
+}
+.fc-white{
+    color:white !important;
+}
+.fw-bold{
+    font-weight:bold;
+}
+.fs-3{
+    font-size:3rem !important;
+}
+.m-0{
+    margin:0 !important;
+}
+.w-100{
+    width:100%;
+}
+.center{
+    margin:auto !important;
+}
+.my-input{
+    border:none;
+    background-color: transparent;
+    border-bottom:1px solid #ccc;
+    margin-bottom:20px;
+    padding:5px;
+}
+.my-input:focus{
+    border:none;
+    outline:none;
+    border-bottom:1px solid #cf2e64 !important;
+    box-shadow:0 1px 0 0 #cf2e64 !important;
+}
+
+/* signup css */
+#toast-container{
+    left:50%;
+    transform:translateX(-50%);
+    width:30%;
+    
+}
+/* glowing text
+.glow {
+    
+    font-size: 80px;
+    color: #fff;
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+  }
+  
+  @-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+  } */
