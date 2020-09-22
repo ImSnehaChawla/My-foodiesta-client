@@ -1,6 +1,7 @@
-import React ,{useState} from 'react';
+import React ,{useState, useContext} from 'react';
 import {Redirect} from 'react-router-dom';
 import {toast} from 'react-toastify';
+import { userContext } from "../context";
 // import Login from './Login';
 // import {Modal,Toast} from 'react-bootstrap';
 
@@ -14,7 +15,7 @@ const Signup =()=>{
 //   const handleClose = () => setShow(false);
 //   const handleShow = () => setShow(true);
 
-    
+const { token, setToken } = useContext(userContext);
     const [username,setName] = useState("")
     const [email,setEmail] = useState("")
     const [password,setPassword] = useState("")
@@ -57,7 +58,9 @@ const Signup =()=>{
             console.log(err)
         })
     }
-    if (success){
+    if (token) return <Redirect to="/main"></Redirect>;
+
+   else if (success){
          return <Redirect to="/main"></Redirect>}
     
 else

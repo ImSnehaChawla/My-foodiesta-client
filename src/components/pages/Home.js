@@ -1,6 +1,7 @@
 import React ,{useState} from 'react';
 import {Modal} from 'react-bootstrap';
 import '../../App.css';
+import Navbar from '../Navbar';
 import VideoPlayer from 'react-video-js-player';
 import Food from '../../videos/food.mp4'
 import Signup from './Signup';
@@ -13,7 +14,9 @@ const handleClose = () => setShow(false);
 const handleShow = () => setShow(true);
 
     return(
+      
         <div >
+          <Navbar />
       <VideoPlayer 
       src={videoSrc}
       // poster={poster}
@@ -26,6 +29,7 @@ const handleShow = () => setShow(true);
     
 <h1 className="glow">VLOG</h1>        */}
       <button className="b-btn" onClick={handleShow}>Create Account</button>
+      
       <Modal
         className="my-modal"
         show={show}
@@ -34,10 +38,11 @@ const handleShow = () => setShow(true);
         keyboard={false}
         centered
       >
-        <Modal.Header className="my-modal-header" closeButton>
+        {/* <Modal.Header className="my-modal-header" closeButton> */}
         <Signup />
+        <button  onClick={handleClose}>Skip</button>
           
-        </Modal.Header>
+        {/* <Modal.Header> */}
         
       </Modal>     
         </div>

@@ -1,16 +1,20 @@
-import React from 'react';
-import {BrowserRouter as Router,Route} from 'react-router-dom'
+import React,{useState} from 'react';
+import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
 import Navbar from './components/Navbar';
 import Home from './components/pages/Home';
-import Signup from './components/pages/Signup';
-import Login from './components/pages/Login';
+// import Signup from './components/pages/Signup';
+// import Login from './components/pages/Login';
 import Welcome from './components/pages/Main';
 import Profile from './components/pages/Profile';
+import { userContext } from "./components/context";
 
 function App() {
+  const [token, setToken] = useState(localStorage.getItem("token"));
   return (
     <Router>
-      <Navbar />
+     
+       <userContext.Provider value={{ token, setToken }}>
+       <Navbar />
       <Route exact path="/">
         <Home />
       </Route>
@@ -26,6 +30,7 @@ function App() {
       <Route path="/main">
         <Welcome />
       </Route>
+      </userContext.Provider>
     </Router>
     
   );
