@@ -1,6 +1,7 @@
-import React,{useState} from 'react';
+import React,{useState, useContext} from 'react';
 import {Redirect} from 'react-router-dom';
 import {toast} from 'react-toastify';
+import { userContext } from "../context.js";
 // import Signup from './Signup';
 // import {Modal, Toast} from 'react-bootstrap';
 
@@ -14,7 +15,7 @@ const Login =()=>{
 //     setShow(true);
      
 // }
-
+const { token, setToken } = useContext(userContext);
     const [email,setEmail] = useState("")
     const [password,setPassword] = useState("")
     const [success,setSuccess] = useState(false)
@@ -48,6 +49,8 @@ const Login =()=>{
             
             }
             else{
+                localStorage.setItem("token",data.token); //token store kraya localstorage me
+                localStorage.setItem("user",JSON.stringify(data.user)); //user ka data store kralia
                setSuccess(true);
             
             }
@@ -57,7 +60,7 @@ const Login =()=>{
             console.log(err)
         })
     }
-    if(success){
+    if(success  || token){
         return <Redirect to="/main"></Redirect>
     }
     
