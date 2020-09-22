@@ -29,6 +29,7 @@ const MyNavbar = () =>{
           </Navbar.Collapse>
         </Navbar>
         <Modal
+        id="login-modal"
         className="my-modal"
         show={show}
         onHide={handleClose}

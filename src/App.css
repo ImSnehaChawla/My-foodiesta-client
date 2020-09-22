@@ -16,8 +16,26 @@
     text-align: center;
     
 }
+/* home */
+.vjs-icon-placeholder{
+    visibility: hidden !important;
+}
+.vjs-big-play-button{
+    visibility: hidden !important;
+}
+.vjs-progress-control{
+    visibility: hidden !important;
+}
+.vjs-control{
+    visibility: hidden !important;
+}
+.vjs-control-bar{
+    visibility: hidden !important;
+}
+
 
 /* homepage css */
+
 
 .my-video{
     width:100% !important;
@@ -102,6 +120,13 @@ padding:0;
     width:30%;
     
 }
+/* main */
+.card-video{
+    height:400px !important;
+    width:600px !important;
+    display:flex !important;
+}
+
 /* glowing text
 .glow {
     

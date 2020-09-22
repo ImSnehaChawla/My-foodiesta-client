@@ -17,8 +17,7 @@ const handleShow = () => setShow(true);
       <VideoPlayer 
       src={videoSrc}
       // poster={poster}
-    // width="720"
-    // height="460"
+  
     autoplay="true"
     className="my-video"
     
@@ -31,7 +30,7 @@ const handleShow = () => setShow(true);
         className="my-modal"
         show={show}
         onHide={handleClose}
-        backdrop="static"
+        // backdrop="static"
         keyboard={false}
         centered
       >

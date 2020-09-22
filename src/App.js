@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Home from './components/pages/Home';
 import Signup from './components/pages/Signup';
 import Login from './components/pages/Login';
+import Welcome from './components/pages/Main';
 import Profile from './components/pages/Profile';
 
 function App() {
@@ -13,14 +14,17 @@ function App() {
       <Route exact path="/">
         <Home />
       </Route>
-      <Route path="/signin">
+      {/* <Route path="/signin">
         <Login />
       </Route>
       <Route path="/signup">
         <Signup/>
-      </Route>
+      </Route> */}
       <Route path="/profile">
     <Profile />
+      </Route>
+      <Route path="/main">
+        <Welcome />
       </Route>
     </Router>
     

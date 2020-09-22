@@ -1,15 +1,18 @@
 import React ,{useState} from 'react';
-import {Link,Redirect} from 'react-router-dom';
-import Login from './Login';
-import {Modal,Toast} from 'react-bootstrap';
+import {Redirect} from 'react-router-dom';
+import {toast} from 'react-toastify';
+// import Login from './Login';
+// import {Modal,Toast} from 'react-bootstrap';
 
+
+toast.configure()
 const Signup =()=>{
 
-    const [show, setShow] = useState(false);
-    const [errorToast, setShowToast] = useState(false);
     
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+
+    
+//   const handleClose = () => setShow(false);
+//   const handleShow = () => setShow(true);
 
     
     const [username,setName] = useState("")
@@ -17,6 +20,9 @@ const Signup =()=>{
     const [password,setPassword] = useState("")
     const [success,setSuccess] = useState(false)
     const [error,setError] = useState("")
+    const notify =(err)=>{
+        toast.error(err,{position: toast.POSITION.TOP_CENTER , autoClose:1000});
+    }
 
     const PostData = ()=>{
 
@@ -36,9 +42,9 @@ const Signup =()=>{
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data);
             if(data.error){
                 setError(data.error);
+                notify(data.error);
             }
             else{
                 setSuccess(true);
@@ -52,15 +58,17 @@ const Signup =()=>{
         })
     }
     if (success){
-         return <Redirect to="/"></Redirect>}
+         return <Redirect to="/main"></Redirect>}
+    
 else
-    return(
+    return(<div>
+    
         <div className="my-card">
             <h2 className="brand-logo fw-bold fs-3 m-0">Foodiesta</h2>
             <label>Share your food stories <span role="img" >❤️</span></label>
-            {errorToast ?<Toast className="center">
-                <Toast.Body>{error}</Toast.Body>
-            </Toast> : null}
+          
+           
+            
             
             <hr />
             <input type="text" className="w-100 my-input" placeholder="Enter Username" value={username} onChange={(e) => setName(e.target.value)} />
@@ -68,9 +76,9 @@ else
             <input type="password" className="w-100 my-input" placeholder="Enter Password" value={password}  onChange={(e) => setPassword(e.target.value)} />
             
             <button className="s-btn" onClick={()=>PostData()}>Signup</button>
-            <h6>
+             {/* <h6>
                     Already Have an account???
-                    {/* <Link to="/signin"> Signin </Link>Here!!! */}
+                    <Link to="/signin"> Signin </Link>Here!!! 
                     <Link  className="fc-black fw-bold" onClick={handleShow}>
                 Login
               </Link>
@@ -79,7 +87,7 @@ else
         className="my-modal"
         show={show}
         onHide={handleClose}
-        // backdrop="static"
+        backdrop="static"
         keyboard={false}
         centered
       >
@@ -88,8 +96,9 @@ else
         </Modal.Header>
         
       </Modal>     
-            
+              */}
     
+    </div>
     </div>
     );
 }
