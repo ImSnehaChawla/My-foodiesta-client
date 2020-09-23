@@ -28,6 +28,7 @@ function App() {
     <Profile />
       </Route>
       <Route path="/main">
+        <Navbar/>
         <Welcome />
       </Route>
       </userContext.Provider>

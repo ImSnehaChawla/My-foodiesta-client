@@ -52,6 +52,7 @@ const { token, setToken } = useContext(userContext);
                 localStorage.setItem("token",data.token); //token store kraya localstorage me
                 localStorage.setItem("user",JSON.stringify(data.user)); //user ka data store kralia
                setSuccess(true);
+               setToken(data.token);
             
             }
             console.log(data);
