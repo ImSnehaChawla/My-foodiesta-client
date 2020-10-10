@@ -6,6 +6,7 @@ import Home from './components/pages/Home';
 // import Login from './components/pages/Login';
 import Welcome from './components/pages/Main';
 import Profile from './components/pages/Profile';
+import CreatePost from './components/pages/createpost';
 import { userContext } from "./components/context";
 
 function App() {
@@ -26,6 +27,9 @@ function App() {
       </Route> */}
       <Route path="/profile">
     <Profile />
+      </Route>
+      <Route path="/createpost">
+    <CreatePost />
       </Route>
       <Route path="/main">
         <Navbar/>

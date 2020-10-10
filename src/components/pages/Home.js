@@ -1,17 +1,25 @@
-import React ,{useState} from 'react';
+import React ,{useState,useContext} from 'react';
+import {Redirect} from 'react-router-dom';
 import {Modal} from 'react-bootstrap';
 import '../../App.css';
 import Navbar from '../Navbar';
 import VideoPlayer from 'react-video-js-player';
 import Food from '../../videos/food.mp4'
 import Signup from './Signup';
+import {userContext} from'../context';
+
 const Home =()=>{
 const videoSrc = Food;
 // const poster = "https://img.picturequotes.com/2/545/544955/food-quote-1.jpg";
 const [show, setShow] = useState(false);
-
+const { token, setToken } = useContext(userContext);
 const handleClose = () => setShow(false);
 const handleShow = () => setShow(true);
+
+if(token){
+  return <Redirect to="/main"></Redirect>
+}
+else
 
     return(
       
