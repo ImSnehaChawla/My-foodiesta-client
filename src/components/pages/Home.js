@@ -48,7 +48,7 @@ else
       >
         {/* <Modal.Header className="my-modal-header" closeButton> */}
         <Signup />
-        <button  onClick={handleClose}>Skip</button>
+        <button className="skip" onClick={handleClose}>Skip</button>
           
         {/* <Modal.Header> */}
         

@@ -1,30 +1,30 @@
-import React from 'react';
 
-const gallery =()=>{
+import React, {useEffect, useState} from 'react';
+const Gallery =()=>{
+    const [mypics,setPics] = useState([]);
+    useEffect(() => {
+        fetch("/myposts",{
+            headers:{
+    "Authorization":"Bearer " + localStorage.getItem("token")
+            }
+        }).then(res =>res.json())
+        .then(result =>{
+            setPics(result.mypost);
+            console.log(result);
+            
+        })
+    },[])
     return <div className="profile-page">
     <div className="gallery">
-    <img className="gallery-items" 
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR_6k1WcZ8NdWlAf2WSZ7WuwHhLPGppqZxmZw&usqp=CAU"/>
-    <img className="gallery-items" 
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR_6k1WcZ8NdWlAf2WSZ7WuwHhLPGppqZxmZw&usqp=CAU"/>
-    <img className="gallery-items" 
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR_6k1WcZ8NdWlAf2WSZ7WuwHhLPGppqZxmZw&usqp=CAU"/>
-    <img className="gallery-items" 
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR_6k1WcZ8NdWlAf2WSZ7WuwHhLPGppqZxmZw&usqp=CAU"/>
-    <img className="gallery-items" 
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR_6k1WcZ8NdWlAf2WSZ7WuwHhLPGppqZxmZw&usqp=CAU"/>
-    <img className="gallery-items" 
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR_6k1WcZ8NdWlAf2WSZ7WuwHhLPGppqZxmZw&usqp=CAU"/>
-     <img className="gallery-items" 
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR_6k1WcZ8NdWlAf2WSZ7WuwHhLPGppqZxmZw&usqp=CAU"/>
-    <img className="gallery-items" 
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR_6k1WcZ8NdWlAf2WSZ7WuwHhLPGppqZxmZw&usqp=CAU"/>
-    <img className="gallery-items" 
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR_6k1WcZ8NdWlAf2WSZ7WuwHhLPGppqZxmZw&usqp=CAU"/>
-    <img className="gallery-items" 
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR_6k1WcZ8NdWlAf2WSZ7WuwHhLPGppqZxmZw&usqp=CAU"/>
-
+        {
+            mypics.map(item =>{
+                return <div  className="gallery-items" ><img
+               key={item._id} src={item.photo} alt={item.title} style={{width:"280px", height:"200px"}}/></div>
+            })
+        }
+    
+    
 </div>
 </div>
 }
-export default gallery;
+export default Gallery;

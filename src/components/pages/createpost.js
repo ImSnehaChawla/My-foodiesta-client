@@ -15,8 +15,42 @@ const CreatePost = () =>{
     const [success,setSuccess] = useState(false);
     const { token, setToken } = useContext(userContext);
 
+    function getExtension(filename) {
+        var parts = filename.split('.');
+        return parts[parts.length - 1];
+      }
+      
+      function isImage(filename) {
+        var ext = getExtension(filename);
+        switch (ext.toLowerCase()) {
+          case 'jpg':
+          case 'gif':
+          case 'bmp':
+          case 'png':
+            //etc
+            return true;
+        }
+        return false;
+      }
+      
+      function isVideo(filename) {
+        var ext = getExtension(filename);
+        switch (ext.toLowerCase()) {
+          case 'm4v':
+          case 'avi':
+          case 'mpg':
+          case 'mp4':
+            // etc
+            return true;
+        }
+        return false;
+      }
+
 useEffect(()=>{
     if(photo){
+        if(isVideo(photo) || isImage(photo)){
+            
+     
     fetch('/createpost',{
         method:"post",
         headers:{
@@ -26,7 +60,8 @@ useEffect(()=>{
         body:JSON.stringify({
             title,
             caption,
-            photo
+            photo,
+            isVideo:isVideo(photo)
         })
     }).then(res=>res.json())
     .then(data=>{
@@ -45,7 +80,10 @@ useEffect(()=>{
         console.log(err)
     })
     }
+}
 },[photo])
+
+
 
     const notify =(err)=>{
         toast.error(err,{position: toast.POSITION.TOP_CENTER });
@@ -76,11 +114,13 @@ useEffect(()=>{
         <SideBar />
         <div className="create-post">
             <div className="create-post-pic">
-            <input className="fc-black" type="file" onChange={(e)=>setImage(e.target.files[0])} />
+                <label for="choosenfile"></label>
+
+            <input className="fc-black" name="choosenfile" type="file" onChange={(e)=>setImage(e.target.files[0])} />
             </div>
             <div>
-            <input className="create-post-title" type="text" placeholder="Enter Title" value={title} onChange={(e)=>setTitle(e.target.value)}  /><br/>
-            <input className="create-post-caption" type="text" placeholder="Enter Caption" value={caption} onChange={(e)=>setCaption(e.target.value)} />
+            <input className="my-input create-post-title" type="text" placeholder="Enter Title" value={title} onChange={(e)=>setTitle(e.target.value)}  /><br/>
+            <input className="my-input create-post-caption" type="text" placeholder="Enter Caption" value={caption} onChange={(e)=>setCaption(e.target.value)} />
             </div>
         <button onClick={()=>postDetails()}>Submit</button>
             

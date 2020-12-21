@@ -67,7 +67,7 @@ if(logout) {
           </Navbar.Collapse>
         </Navbar>
         <Modal
-        id="login-modal"
+        
         className="my-modal"
         show={show}
         onHide={handleClose}
@@ -78,7 +78,7 @@ if(logout) {
       >
         {/* <Modal.Header className="my-modal-header" closeButton> */}
         <Login />
-        <button  onClick={handleClose}>Skip</button>
+        <button className="skip" onClick={handleClose}>Skip</button>
           {/* <Modal.Title>Modal title</Modal.Title> */}
         {/* </Modal.Header> */}
         {/* <Modal.Body className="my-modal-body" >

@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
+
 /* navbar css */
 #my-nav{
     width:100%;
-    background-color:#eb4a7f !important;
-    height:70px !important;
+    /* background-color:#eb4a7f !important; */
+    background: linear-gradient(to left, #ff6666 0%, #ff0066 100%) !important;
+    height:50px !important;
     z-index:1;
     position: fixed;
     top:0;
@@ -25,6 +27,7 @@
 /* modal css */
 .my-modal{
     text-align: center;
+    
     
 }
 /* home */
@@ -66,16 +69,18 @@ padding:0;
     transform: translateX(-50%);
     border:none;
     border-radius:50px;
-    padding:10px;
-    background-color:rgb(165, 20, 64);
+    padding:10px 20px;
+    /* background-color:rgb(165, 20, 64); */
+    background: linear-gradient(to left, #ff5050 0%, #ff0066 100%);
     color:white;
-    font-size:1.5rem;
+    font-size:1.2rem;
 }
 /* custom classes for all */
 .s-btn{
-    background-color: rgb(165, 20, 64) !important;
+    /* background-color: rgb(165, 20, 64) !important; */
+    background: linear-gradient(to left, #ff5050 0%, #ff0066 100%);
     color:white;
-    font-size:1.2rem;
+    font-size:1rem;
     border-radius:50px;
     width:100px;
     border:none;
@@ -84,6 +89,10 @@ padding:0;
     margin: 20px;
     
 }
+.s-btn:hover, .b-btn:hover{
+    background: linear-gradient(to right, #ff5050 0%, #ff0066 100%);
+}
+
 
 .brand-logo{
     font-family:'Great Vibes',cursive;
@@ -137,13 +146,26 @@ padding:0;
     width:30%;
     
 }
+.my-card{
+    padding:20px;
+
+}
+.skip{
+    width:10px;
+    height:10px;
+    border:none;
+    outline: none;
+    position: absolute;
+    top:20px;
+    right:20px;
+}
 /* main */
 .main-card{
     
     width:100%;
 }
 .card-video{
-    height:400px !important;
+    height:420px !important;
     width:100% !important;
     /* display:flex !important; */
     
@@ -155,6 +177,8 @@ position: absolute;
 left:50%;
 transform: translateX(-50%);
     width:60%;
+    
+    padding:20px;
 }
 .main-page{
     display:flex;
@@ -164,7 +188,7 @@ transform: translateX(-50%);
     position: absolute;
     left:0;
     top:70px;
-    padding:20px;
+    /* padding:20px; */
 }
 
 /* sidenavbar css */
@@ -188,19 +212,25 @@ margin-top:70px;
   .video-side-username{
       color:white;
       position: absolute;  
-      left:10px; 
-      
+      /* left:10px;  */
+      width: 100%;
+      /* height:40px; */
       z-index:3;
-      text-align: center;
+      text-align: left;
+      padding:7px 15px;
+      background-color: rgba(0, 0, 0,0.5);
   }
   .video-side-items{
-      color:white;
+      color:black;
       font-size:18px;
       z-index: 3;
       position: absolute;
-      bottom:5px;
-      left:50%;
-      transform: translateX(-50%);
+      /* bottom:5px; */
+      top:0;
+
+      right:5%;
+      /* width:100%; */
+      /* transform: translateX(-50%); */
       
 
   }
@@ -236,6 +266,7 @@ margin-top:70px;
 padding:10px;
 height:200px;
 width:280px;
+display:inline;
 }
 .profile-top{
     display:flex;
@@ -271,3 +302,14 @@ width:80%;
 margin:auto;
 
 }
+/* .my-input{ */
+    /* border:none; */
+    /* outline:none; */
+/* } */
+/* like heart css */
+.osm-icon-liked {
+    color: #dc3545 !important;
+  }
+  /* .osm-icon{ */
+      /* color:blue !important; */
+  /* } */
