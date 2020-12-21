@@ -80,7 +80,7 @@ if(logout) {
       >
         {/* <Modal.Header className="my-modal-header" closeButton> */}
         <Login />
-        <button className="skip" onClick={handleClose}><FontAwesomeIcon icon={faTimes} /></button>
+        <button className="skip" style={{backgroundColor:"transparent",outline:"none",border:"none"}} onClick={handleClose}><FontAwesomeIcon icon={faTimes} /></button>
           {/* <Modal.Title>Modal title</Modal.Title> */}
         {/* </Modal.Header> */}
         {/* <Modal.Body className="my-modal-body" >

@@ -50,7 +50,7 @@ else
       >
         {/* <Modal.Header className="my-modal-header" closeButton> */}
         <Signup />
-        <button className="skip" onClick={handleClose}><FontAwesomeIcon icon={faTimes}/></button>
+        <button className="skip" style={{backgroundColor:"transparent",outline:"none",border:"none"}} onClick={handleClose}><FontAwesomeIcon icon={faTimes}/></button>
           
         {/* <Modal.Header> */}
         

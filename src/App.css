@@ -260,7 +260,7 @@ top:70px;
 /*profile-page css*/
 .gallery{
     display:inline;
-    
+    background-color: ghostwhite;
 }
 .gallery-items{
 padding:10px;
@@ -271,18 +271,27 @@ display:inline;
 .profile-top{
     display:flex;
     justify-content: space-evenly;
+    width:60%;
+    /* height:200px; */
     position: absolute;
     top:70px;
     left:50%;
     transform: translateX(-50%);
+    padding:20px;
+    background-color: ghostwhite;
     
 }
+.profile-top-labels{
+    display:flex;
+    flex-direction: column;
+}
+
 .profile-page{
-    width:70%;
+    width:60%;
     /* margin-top:70px; */
     padding:50px;
     position: absolute;
-    top:200px;
+    top:300px;
     left:50%;
     transform: translateX(-50%);
 }
@@ -299,8 +308,23 @@ display:inline;
     background-repeat: no-repeat;
 height:500px;
 width:80%;
-margin:auto;
+position:absolute;
+left:50%;
+transform: translateX(-50%);
 
+}
+.create-post-icon{
+    float:right;
+}
+.create-post-input{
+    position: absolute;;
+    width:50%;
+    left:50%;
+    top:150px;
+    padding:20px;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
 }
 /* .my-input{ */
     /* border:none; */

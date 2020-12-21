@@ -4,6 +4,8 @@ import MainLeft from './sections/mainleft';
 import {toast} from 'react-toastify';
 import {Redirect} from 'react-router-dom'
 import { userContext } from "../context";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCamera} from '@fortawesome/free-solid-svg-icons';
 
 toast.configure()
 
@@ -114,16 +116,25 @@ useEffect(()=>{
         <SideBar />
         <div className="create-post">
             <div className="create-post-pic">
-                <label for="choosenfile"></label>
+                <div className="create-post-input">
+                <label for="choosenfile" className="create-post-icon"><FontAwesomeIcon icon={faCamera} size="5x" /></label>
+                
 
-            <input className="fc-black" name="choosenfile" type="file" onChange={(e)=>setImage(e.target.files[0])} />
-            </div>
-            <div>
-            <input className="my-input create-post-title" type="text" placeholder="Enter Title" value={title} onChange={(e)=>setTitle(e.target.value)}  /><br/>
-            <input className="my-input create-post-caption" type="text" placeholder="Enter Caption" value={caption} onChange={(e)=>setCaption(e.target.value)} />
-            </div>
-        <button onClick={()=>postDetails()}>Submit</button>
-            
+<input style={{display:"none"}} className="fc-black" name="choosenfile" id="choosenfile" type="file" 
+onChange={(e)=>setImage(e.target.files[0])} />
+
+{/* </div> */}
+{/* <div> */}
+<input className="my-input " type="text" placeholder="Enter Title" value={title} onChange={(e)=>setTitle(e.target.value)}  /><br/>
+
+<input className="my-input " type="text" placeholder="Enter Caption" value={caption} onChange={(e)=>setCaption(e.target.value)} />
+
+
+<button className="s-btn" onClick={()=>postDetails()}>Submit</button>
+
+</div>
+                </div>
+               
         </div>
         <MainLeft />
     </div>
