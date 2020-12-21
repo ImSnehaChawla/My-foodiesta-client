@@ -3,6 +3,8 @@ import {Link, Redirect} from "react-router-dom";
 import {Button,Navbar,Nav,Modal} from 'react-bootstrap';
 import Login from './pages/Login';
 import {userContext} from'./context';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes} from '@fortawesome/free-solid-svg-icons';
 import '../App.css';
 const MyNavbar = () =>{
 // modal const
@@ -78,7 +80,7 @@ if(logout) {
       >
         {/* <Modal.Header className="my-modal-header" closeButton> */}
         <Login />
-        <button className="skip" onClick={handleClose}>Skip</button>
+        <button className="skip" onClick={handleClose}><FontAwesomeIcon icon={faTimes} /></button>
           {/* <Modal.Title>Modal title</Modal.Title> */}
         {/* </Modal.Header> */}
         {/* <Modal.Body className="my-modal-body" >

@@ -108,7 +108,8 @@ const Welcome = ()=>{
     .then(result => {
       console.log(result)
       const newData = data.filter(item => {
-        return item._id != result._id
+        // return item._id != result._id
+        console.log(result._id,item._id)
       })
       setData(newData)
     })

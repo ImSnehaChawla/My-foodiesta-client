@@ -7,6 +7,8 @@ import VideoPlayer from 'react-video-js-player';
 import Food from '../../videos/food.mp4'
 import Signup from './Signup';
 import {userContext} from'../context';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes} from '@fortawesome/free-solid-svg-icons';
 
 const Home =()=>{
 const videoSrc = Food;
@@ -48,7 +50,7 @@ else
       >
         {/* <Modal.Header className="my-modal-header" closeButton> */}
         <Signup />
-        <button className="skip" onClick={handleClose}>Skip</button>
+        <button className="skip" onClick={handleClose}><FontAwesomeIcon icon={faTimes}/></button>
           
         {/* <Modal.Header> */}
         
